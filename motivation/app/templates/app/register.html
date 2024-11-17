@@ -37,9 +37,10 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 450px; /* Reduced from 600px */
             padding-top: 20px;
             padding-bottom: 20px;
+            margin: 0 auto; /* Ensure container is centered */
         }
 
         .card {
@@ -47,15 +48,24 @@
             border-radius: 15px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             background: rgba(255, 255, 255, 0.98);
+            width: 100%;
+            margin: 0 auto;
         }
 
         .card-body {
-            padding: 2.5rem;
+            padding: 2rem;
         }
 
         .form-outline {
             position: relative;
             margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            max-width: 400px; /* Control form width */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .form-control {
@@ -63,6 +73,8 @@
             border-radius: 8px;
             border: 1px solid #ced4da;
             transition: border-color 0.2s ease-in-out;
+            flex: 1;
+            width: auto;
         }
 
         .form-control:focus {
@@ -71,9 +83,11 @@
         }
 
         .form-label {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0;
             color: #495057;
             font-weight: 500;
+            min-width: 130px;
+            text-align: right; /* Right align labels */
         }
 
         .text-danger {
@@ -100,9 +114,15 @@
             margin-bottom: 1.5rem;
         }
 
+        /* Center the submit button and login text */
+        .form-actions {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
         @media (max-width: 768px) {
             .container {
-                max-width: 100%;
                 padding-left: 15px;
                 padding-right: 15px;
             }
@@ -110,12 +130,22 @@
             .card-body {
                 padding: 1.5rem;
             }
+
+            .form-outline {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.5rem;
+            }
+
+            .form-label {
+                min-width: auto;
+                text-align: left;
+            }
         }
     </style>
 </head>
 <body>
 <style>
-    /* Add these styles to your existing style section */
     .logo-container {
         width: 100%;
         max-width: 400px;
@@ -128,36 +158,16 @@
         height: auto;
         display: block;
     }
-
-    /* Remove or comment out these styles since we're replacing them */
-    /* .header-title {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #0044cc;
-        text-align: center;
-        margin-bottom: 10px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    } */
 </style>
 
-<!-- Replace the h1 header title with this -->
 <div class="logo-container">
     <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
-        <!-- Background Circle -->
         <circle cx="60" cy="60" r="50" fill="#4A90E2" />
-
-        <!-- Upward Arrow -->
         <path d="M40 70 L60 40 L80 70" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-
-        <!-- Progress Arc -->
         <path d="M35 60 A25 25 0 1 1 85 60" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
-
-        <!-- Text -->
         <text x="130" y="75" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#2C3E50">
             Motive<tspan fill="#4A90E2">X</tspan>
         </text>
-
-        <!-- Tagline -->
         <text x="130" y="95" font-family="Arial, sans-serif" font-size="14" fill="#666">
             Weekly Motivation, Endless Growth
         </text>
@@ -179,8 +189,8 @@
                     {% csrf_token %}
 
                     <div class="form-outline">
-                        {{ form.username }}
                         <label class="form-label" for="id_username">Username</label>
+                        {{ form.username }}
                         {% if form.username.errors %}
                         <div class="text-danger">
                             {{ form.username.errors }}
@@ -189,8 +199,8 @@
                     </div>
 
                     <div class="form-outline">
-                        {{ form.email }}
                         <label class="form-label" for="id_email">Email address</label>
+                        {{ form.email }}
                         {% if form.email.errors %}
                         <div class="text-danger">
                             {{ form.email.errors }}
@@ -199,8 +209,8 @@
                     </div>
 
                     <div class="form-outline">
-                        {{ form.password1 }}
                         <label class="form-label" for="id_password1">Password</label>
+                        {{ form.password1 }}
                         {% if form.password1.errors %}
                         <div class="text-danger">
                             {{ form.password1.errors }}
@@ -209,8 +219,8 @@
                     </div>
 
                     <div class="form-outline">
-                        {{ form.password2 }}
                         <label class="form-label" for="id_password2">Confirm Password</label>
+                        {{ form.password2 }}
                         {% if form.password2.errors %}
                         <div class="text-danger">
                             {{ form.password2.errors }}
@@ -218,16 +228,16 @@
                         {% endif %}
                     </div>
 
-                    <button type="submit" class="btn btn-primary w-100">Create Account</button>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary w-100">Create Account</button>
 
-                    <p class="text-center mb-0">
-                        Already have an account? <a href="{% url 'login' %}" class="text-primary">Login here</a>
-                    </p>
+                        <p class="text-center mt-3 mb-0">
+                            Already have an account? <a href="{% url 'login' %}" class="text-primary">Login here</a>
+                        </p>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
-
-
 </body>
 </html>
