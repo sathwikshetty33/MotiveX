@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44312893-1d23-4e15-9702-6d663b41bf15" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/motivation/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motivation/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/motivation/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motivation/app/quotes.py" beforeDir="false" afterPath="$PROJECT_DIR$/motivation/app/quotes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motivation/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/motivation/app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motivation/motivation/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/motivation/motivation/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motivation/app/management/commands/sendmotivation.py" beforeDir="false" afterPath="$PROJECT_DIR$/motivation/app/management/commands/sendmotivation.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -37,14 +33,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
