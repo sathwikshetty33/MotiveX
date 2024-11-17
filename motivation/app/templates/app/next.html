@@ -43,9 +43,22 @@
             margin-bottom: 10px;
         }
 
-        /* Style for the previous quotes */
-        .quote-card {
+        /* Style for the quote boxes */
+        .quote-card, .this-week-quote {
             margin-bottom: 20px;
+            background-color: #00c4cc; /* Set background color for the quote boxes */
+            border-color: #00c4cc; /* Optional: Set border color to match */
+        }
+
+        /* Optional: Adjust text color inside the quote boxes for better visibility */
+        .quote-card .card-body, .this-week-quote .card-body {
+            color: white;
+        }
+
+        /* Adjust image size for the navbar */
+        .navbar-brand img {
+            width: 40px; /* Adjust the size of the image */
+            height: auto;
         }
     </style>
 </head>
@@ -53,11 +66,27 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Inspivo</a>
-            <div class="ms-auto">
-                <button class="btn btn-outline-light" id="api">A.P.I</button>
-                <button class="btn btn-outline-danger me-2" id="deleteAccount">Delete Account</button>
-                <button class="btn btn-outline-light" id="logout">Logout</button>
+            <!-- Image added to the navbar -->
+            <a class="navbar-brand" href="#">
+                <img src="Mondaymotivatorweb\motivation\motivex-logo.svg" alt="MotiveX"> <!-- Add the image file path here -->
+               
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light me-2" id="api">A.P.I</button>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <button class="btn btn-outline-danger me-2" id="logout">Logout</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-danger me-2" id="deleteAccount">Delete Account</button>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -79,7 +108,7 @@
                 <div class="quote-header">
                     <h4>This week's quote</h4>
                 </div>
-                <div class="card mb-4">
+                <div class="card mb-4 this-week-quote">
                     <div class="card-body">
                         <blockquote class="blockquote mb-0">
                             <p>"The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle."</p>
