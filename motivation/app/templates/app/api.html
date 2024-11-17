@@ -8,8 +8,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <style>
         .navbar-custom {
-            background-color: #4A90E2;
+            background-color: #f6f9fa;
             padding: 0.5rem 1rem;
+
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0;
+        }
+
+        .navbar-brand img {
+            height: 100px;
+            width: auto;
+        }
+
+        .brand-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            font-family: Arial, sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-x {
+            color: #2C3E50;
         }
 
         .api-header {
@@ -56,42 +81,6 @@
             margin: 1rem 0;
             border-radius: 0 4px 4px 0;
         }
-
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 0;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-svg {
-            height: 50px;
-            width: auto;
-        }
-
-        .brand-text {
-            display: inline-block;
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            margin-left: 10px;
-            font-family: Arial, sans-serif;
-            letter-spacing: 0.5px;
-        }
-
-        .brand-x {
-            color: #2C3E50;
-        }
-
-        /* Adjust vertical alignment */
-        .navbar-brand img {
-            vertical-align: middle;
-        }
     </style>
 </head>
 <body>
@@ -99,27 +88,15 @@
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
-                    <!-- Background Circle -->
-                    <circle cx="60" cy="60" r="50" fill="#4A90E2" />
-
-                    <!-- Upward Arrow -->
-                    <path d="M40 70 L60 40 L80 70" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-
-                    <!-- Progress Arc -->
-                    <path d="M35 60 A25 25 0 1 1 85 60" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                </svg>
-                <span class="brand-text">
-                    Motive<span class="brand-x">X</span>
-                </span>
-            </a>
+                <img src="motivex-logo.svg" alt="MotiveX Logo">
+                <!-- <span class="brand-text">Motive<span class="brand-x">X</span></span>
+            </a> -->
             <div class="ms-auto">
                 <a href="{% url 'home' %}" class="btn btn-outline-light">Back to Home</a>
             </div>
         </div>
     </nav>
 
-    <!-- Rest of the HTML remains the same -->
     <!-- API Header -->
     <div class="api-header">
         <div class="container">
