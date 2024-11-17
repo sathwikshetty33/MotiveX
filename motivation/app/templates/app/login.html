@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monday Motivation - Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #add8e6, #0044cc);
+            font-family: Arial, sans-serif;
+        }
+
+        .sun-image {
+            display: block;
+            margin: 20px auto;
+            width: 100px;
+        }
+
+        .header-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0044cc;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subheader-title {
+            font-size: 1.2rem;
+            color: #555;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .card img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .input-group-text img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                max-width: 100%;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sun Image -->
+    <img src="https://img.icons8.com/color/96/sun.png" alt="Sun" class="sun-image">
+
+    <!-- Header Section -->
+    <h1 class="header-title">Monday Motivation</h1>
+    <p class="subheader-title">Begin each week with optimism</p>
+
+    <!-- Login Form -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">Login</h2>
+                        <form id="loginForm">
+                            <div class="mb-3 input-group">
+                                <span class="input-group-text">
+                                    <img src="https://img.icons8.com/ios-filled/50/user.png" alt="username">
+                                </span>
+                                <input type="text" class="form-control" id="username" placeholder="Username" required>
+                            </div>
+                            <div class="mb-3 input-group">
+                                <span class="input-group-text">
+                                    <img src="https://img.icons8.com/ios/24/email.png" alt="email">
+                                </span>
+                                <input type="email" class="form-control" id="email" placeholder="Gmail" required>
+                            </div>
+                            <div class="mb-3 input-group">
+                                <span class="input-group-text">
+                                    <img src="https://img.icons8.com/ios/24/lock.png" alt="password">
+                                </span>
+                                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Start your journey!</button>
+                        </form>
+                        <p class="text-center mt-3">
+                            New user? <a href="register.html">Register here</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Login successful!');
+            window.location.href = 'quotes.html';
+        });
+    </script>
+</body>
+</html>

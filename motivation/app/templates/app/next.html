@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspivo - Daily Motivation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* Custom navbar background color */
+        .navbar-custom {
+            background-color: #26bec9;
+        }
+
+        .btn-danger, .btn-outline-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+            color: white;
+        }
+
+        .btn-danger:hover, .btn-outline-danger:hover {
+            background-color: #c82333;
+            border-color: #c82333;
+        }
+
+        .loading-spinner {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+
+        /* Ensure the spinner stays visible */
+        .loading-spinner .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        /* Remove header box styling */
+        .quote-header {
+            margin-bottom: 10px;
+        }
+
+        /* Style for the previous quotes */
+        .quote-card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Inspivo</a>
+            <div class="ms-auto">
+                <button class="btn btn-outline-light" id="api">A.P.I</button>
+                <button class="btn btn-outline-danger me-2" id="deleteAccount">Delete Account</button>
+                <button class="btn btn-outline-light" id="logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <!-- Welcome Message (without card) -->
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center mb-4">
+                <h2>Welcome, User!</h2>
+                <p class="text-muted">Get ready for your weekly dose of motivation</p>
+            </div>
+        </div>
+
+        <!-- Quotes Section -->
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <!-- This Week's Quote -->
+                <div class="quote-header">
+                    <h4>This week's quote</h4>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>"The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle."</p>
+                            <footer class="blockquote-footer">Steve Jobs</footer>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- Previous Week's Quotes (Side-by-Side) -->
+                <div class="quote-header">
+                    <h4>Previous Week's Quotes</h4>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card quote-card">
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>"Success is not final, failure is not fatal: it is the courage to continue that counts."</p>
+                                    <footer class="blockquote-footer">Winston Churchill</footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card quote-card">
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>"Believe you can and you're halfway there."</p>
+                                    <footer class="blockquote-footer">Theodore Roosevelt</footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card quote-card">
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>"It does not matter how slowly you go as long as you do not stop."</p>
+                                    <footer class="blockquote-footer">Confucius</footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <script>
+        // Delete Account functionality
+        document.getElementById('deleteAccount').addEventListener('click', function() {
+            if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+                // Show loading spinner
+                document.getElementById('loadingSpinner').style.display = 'block';
+                
+                // Simulate delete account action (e.g., API request)
+                setTimeout(function() {
+                    alert('Account deleted successfully');
+                    window.location.href = 'login.html'; // Redirect to login page
+                }, 2000);
+            }
+        });
+
+        // Logout functionality
+        document.getElementById('logout').addEventListener('click', function() {
+            if (confirm('Are you sure you want to logout?')) {
+                // Show loading spinner
+                document.getElementById('loadingSpinner').style.display = 'block';
+
+                // Simulate logout action (e.g., API request)
+                setTimeout(function() {
+                    window.location.href = 'login.html'; // Redirect to login page
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>
