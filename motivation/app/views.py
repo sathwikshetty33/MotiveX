@@ -71,7 +71,7 @@ def home(requset):
 @login_required(login_url='login')
 def dele(request):
     user = request.user
-    s = get_object_or_404(User, user=user)
+    s = get_object_or_404(User, username=user.username)
     s.delete()
     return redirect('login')
 def log(request):

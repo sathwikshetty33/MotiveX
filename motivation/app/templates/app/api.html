@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inspivo - API Documentation</title>
+    <title>MotiveX - API Documentation</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <style>
         .navbar-custom {
-            background-color: #26bec9;
+            background-color: #4A90E2;
+            padding: 0.5rem 1rem;
         }
 
         .api-header {
-            background-color: #26bec9;
+            background-color: #4A90E2;
             color: white;
             padding: 3rem 0;
             margin-bottom: 2rem;
         }
 
         .endpoint-card {
-            border-left: 4px solid #26bec9;
+            border-left: 4px solid #4A90E2;
             margin-bottom: 2rem;
         }
 
         .method-badge {
-            background-color: #26bec9;
+            background-color: #4A90E2;
             color: white;
             padding: 0.3rem 0.6rem;
             border-radius: 4px;
@@ -49,11 +50,47 @@
         }
 
         .highlight-box {
-            background-color: rgba(38, 190, 201, 0.1);
-            border-left: 4px solid #26bec9;
+            background-color: rgba(74, 144, 226, 0.1);
+            border-left: 4px solid #4A90E2;
             padding: 1rem;
             margin: 1rem 0;
             border-radius: 0 4px 4px 0;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-svg {
+            height: 50px;
+            width: auto;
+        }
+
+        .brand-text {
+            display: inline-block;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-left: 10px;
+            font-family: Arial, sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-x {
+            color: #2C3E50;
+        }
+
+        /* Adjust vertical alignment */
+        .navbar-brand img {
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -61,17 +98,32 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">Inspivo</a>
+            <a class="navbar-brand" href="#">
+                <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+                    <!-- Background Circle -->
+                    <circle cx="60" cy="60" r="50" fill="#4A90E2" />
+
+                    <!-- Upward Arrow -->
+                    <path d="M40 70 L60 40 L80 70" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+                    <!-- Progress Arc -->
+                    <path d="M35 60 A25 25 0 1 1 85 60" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                <span class="brand-text">
+                    Motive<span class="brand-x">X</span>
+                </span>
+            </a>
             <div class="ms-auto">
                 <a href="{% url 'home' %}" class="btn btn-outline-light">Back to Home</a>
             </div>
         </div>
     </nav>
 
+    <!-- Rest of the HTML remains the same -->
     <!-- API Header -->
     <div class="api-header">
         <div class="container">
-            <h1>Inspivo API</h1>
+            <h1>MotiveX API</h1>
             <p class="lead mb-0">Access our weekly motivational quotes through our free API</p>
         </div>
     </div>
@@ -91,14 +143,14 @@
                     </div>
                 </div>
 
-
+                <!-- Weekly Quote Endpoint -->
                 <div class="card endpoint-card">
                     <div class="card-body">
                         <h3>Get Weekly Quote</h3>
                         <span class="method-badge">GET</span>
 
                         <div class="endpoint-url">
-                            https://sathwik33.pythonanywhere.com/api/
+                           https://sathwik33.pythonanywhere.com/api/
                         </div>
 
                         <h5>Description</h5>
@@ -130,7 +182,7 @@
                         <span class="method-badge">GET</span>
 
                         <div class="endpoint-url">
-                            https://inspivo.com/api/quote/previous
+                            https://sathwik33.pythonanywhere.com/api/
                         </div>
 
                         <h5>Description</h5>
@@ -188,17 +240,8 @@
                         <h4>Quick Start</h4>
                         <div class="highlight-box">
                             <p class="mb-0">👉 Simply make a GET request to<br>
-                            <code>https://inspivo.com/api/quote/weekly</code></p>
+                            <code>https://sathwik33.pythonanywhere.com/api/</code></p>
                         </div>
-                        <hr>
-                        <h4>Need Help?</h4>
-                        <p>If you have any questions or need support:</p>
-                        <ul>
-                            <li>Check our documentation</li>
-                            <li>Contact our support team</li>
-                            <li>Join our community</li>
-                        </ul>
-                        <button class="btn btn-outline-primary w-100">Contact Support</button>
                     </div>
                 </div>
             </div>
@@ -208,7 +251,7 @@
     <!-- Footer -->
     <footer class="bg-light mt-5 py-3">
         <div class="container text-center">
-            <p class="text-muted mb-0">© 2024 Inspivo. All rights reserved.</p>
+            <p class="text-muted mb-0">© 2024 MotiveX. All rights reserved.</p>
         </div>
     </footer>
 </body>

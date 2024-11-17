@@ -61,12 +61,55 @@
     </style>
 </head>
 <body>
-    <img src="https://img.icons8.com/color/96/sun.png" alt="Sun" class="sun-image">
+<style>
+    /* Add these styles to your existing style section */
+    .logo-container {
+        width: 100%;
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 0 15px;
+    }
 
-    <!-- Header Section -->
-    <h1 class="header-title">Inspivo</h1>
-    <p class="subheader-title">Begin each week with optimism</p>
+    .logo-svg {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
+    /* Remove or comment out these styles since we're replacing them */
+    /* .header-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #0044cc;
+        text-align: center;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    } */
+</style>
+
+<!-- Replace the h1 header title with this -->
+<div class="logo-container">
+    <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+        <!-- Background Circle -->
+        <circle cx="60" cy="60" r="50" fill="#4A90E2" />
+
+        <!-- Upward Arrow -->
+        <path d="M40 70 L60 40 L80 70" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- Progress Arc -->
+        <path d="M35 60 A25 25 0 1 1 85 60" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+
+        <!-- Text -->
+        <text x="130" y="75" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#2C3E50">
+            Motive<tspan fill="#4A90E2">X</tspan>
+        </text>
+
+        <!-- Tagline -->
+        <text x="130" y="95" font-family="Arial, sans-serif" font-size="14" fill="#666">
+            Weekly Motivation, Endless Growth
+        </text>
+    </svg>
+</div>
     <!-- Login Form -->
     <div class="container mt-5">
         <div class="row justify-content-center">
