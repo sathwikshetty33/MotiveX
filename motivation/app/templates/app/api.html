@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspivo - API Documentation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .navbar-custom {
+            background-color: #26bec9;
+        }
+
+        .api-header {
+            background-color: #26bec9;
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .endpoint-card {
+            border-left: 4px solid #26bec9;
+            margin-bottom: 2rem;
+        }
+
+        .method-badge {
+            background-color: #26bec9;
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        .endpoint-url {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 1rem 0;
+        }
+
+        .response-example {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre;
+        }
+
+        .highlight-box {
+            background-color: rgba(38, 190, 201, 0.1);
+            border-left: 4px solid #26bec9;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">Inspivo</a>
+            <div class="ms-auto">
+                <a href="{% url 'home' %}" class="btn btn-outline-light">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- API Header -->
+    <div class="api-header">
+        <div class="container">
+            <h1>Inspivo API</h1>
+            <p class="lead mb-0">Access our weekly motivational quotes through our free API</p>
+        </div>
+    </div>
+
+    <!-- API Documentation -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Introduction -->
+                <div class="mb-5">
+                    <h2>Getting Started</h2>
+                    <p>Our API is completely free to use and requires no authentication. Get inspired with our weekly curated motivational quotes!</p>
+
+                    <div class="highlight-box">
+                        <h5>🌟 Weekly Updates</h5>
+                        <p class="mb-0">Our quotes are updated every Monday at 00:00 UTC. Make sure to check back weekly for fresh inspiration!</p>
+                    </div>
+                </div>
+
+
+                <div class="card endpoint-card">
+                    <div class="card-body">
+                        <h3>Get Weekly Quote</h3>
+                        <span class="method-badge">GET</span>
+
+                        <div class="endpoint-url">
+                            https://inspivo.com/api/quote/weekly
+                        </div>
+
+                        <h5>Description</h5>
+                        <p>Returns this week's motivational quote. No parameters required.</p>
+
+                        <h5>Example Response</h5>
+                        <div class="response-example">
+{
+    "quote": "The only way to do great work is to love what you do.",
+    "author": "Steve Jobs",
+    "week_of": "2024-11-17",
+    "next_update": "2024-11-24"
+}</div>
+
+                        <h5 class="mt-3">Response Format</h5>
+                        <ul class="list-unstyled">
+                            <li><strong>quote</strong> (string): The weekly motivational quote</li>
+                            <li><strong>author</strong> (string): The author of the quote</li>
+                            <li><strong>week_of</strong> (string): The start date of the current week</li>
+                            <li><strong>next_update</strong> (string): The date when the next quote will be available</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Previous Quotes Endpoint -->
+                <div class="card endpoint-card">
+                    <div class="card-body">
+                        <h3>Get Previous Quotes</h3>
+                        <span class="method-badge">GET</span>
+
+                        <div class="endpoint-url">
+                            https://inspivo.com/api/quote/previous
+                        </div>
+
+                        <h5>Description</h5>
+                        <p>Returns the last 4 weeks of motivational quotes.</p>
+
+                        <h5>Example Response</h5>
+                        <div class="response-example">
+{
+    "previous_quotes": [
+        {
+            "quote": "Success is not final, failure is not fatal...",
+            "author": "Winston Churchill",
+            "week_of": "2024-11-10"
+        },
+        {
+            "quote": "Life is what happens while you're...",
+            "author": "John Lennon",
+            "week_of": "2024-11-03"
+        }
+    ]
+}</div>
+                    </div>
+                </div>
+
+                <!-- Rate Limits -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3>Rate Limits</h3>
+                        <p>To ensure fair usage, we apply the following rate limits:</p>
+                        <ul>
+                            <li>100 requests per hour per IP address</li>
+                            <li>1000 requests per day per IP address</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Error Handling -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3>Error Handling</h3>
+                        <p>The API uses standard HTTP response codes:</p>
+                        <ul>
+                            <li><strong>200:</strong> Success</li>
+                            <li><strong>429:</strong> Too many requests - you've hit the rate limit</li>
+                            <li><strong>500:</strong> Server error</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="col-md-4">
+                <div class="card sticky-top" style="top: 20px">
+                    <div class="card-body">
+                        <h4>Quick Start</h4>
+                        <div class="highlight-box">
+                            <p class="mb-0">👉 Simply make a GET request to<br>
+                            <code>https://inspivo.com/api/quote/weekly</code></p>
+                        </div>
+                        <hr>
+                        <h4>Need Help?</h4>
+                        <p>If you have any questions or need support:</p>
+                        <ul>
+                            <li>Check our documentation</li>
+                            <li>Contact our support team</li>
+                            <li>Join our community</li>
+                        </ul>
+                        <button class="btn btn-outline-primary w-100">Contact Support</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light mt-5 py-3">
+        <div class="container text-center">
+            <p class="text-muted mb-0">© 2024 Inspivo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

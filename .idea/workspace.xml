@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44312893-1d23-4e15-9702-6d663b41bf15" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/motivation/app/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motivation/app/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motivation/app/templates/app/api.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motivation/app/management/commands/sendmotivation.py" beforeDir="false" afterPath="$PROJECT_DIR$/motivation/app/management/commands/sendmotivation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motivation/app/templates/app/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/motivation/app/templates/app/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motivation/app/templates/app/next.html" beforeDir="false" afterPath="$PROJECT_DIR$/motivation/app/templates/app/next.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motivation/app/templates/app/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/motivation/app/templates/app/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motivation/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/motivation/app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motivation/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/motivation/app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motivation/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/motivation/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motivation/motivation/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/motivation/motivation/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
