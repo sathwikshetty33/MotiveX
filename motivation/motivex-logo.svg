@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+    <!-- Background Circle -->
+    <circle cx="60" cy="60" r="50" fill="#4A90E2" />
+    
+    <!-- Upward Arrow -->
+    <path d="M40 70 L60 40 L80 70" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Progress Arc -->
+    <path d="M35 60 A25 25 0 1 1 85 60" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- Text -->
+    <text x="130" y="75" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#2C3E50">
+        Motive<tspan fill="#4A90E2">X</tspan>
+    </text>
+    
+    <!-- Tagline -->
+    <text x="130" y="95" font-family="Arial, sans-serif" font-size="14" fill="#666">
+        Weekly Motivation, Endless Growth
+    </text>
+</svg>
