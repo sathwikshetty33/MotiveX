@@ -118,7 +118,7 @@ class Command(BaseCommand):
                 for user in users:
                     try:
                         send_mail(
-                            subject="Sunday Motivation",
+                            subject="Monday Motivation",
                             message=message,
                             from_email=settings.EMAIL_HOST_USER,
                             recipient_list=[user.email],
