@@ -23,6 +23,11 @@ class api(APIView):
                 "author" : serializer.data.get('author')
             }
         )
+    def post(self, request):
+        data = request.data
+        return Response({
+            "status" : f"Helllo {data['name']} and your age is {data['age']}"
+        })
 
 
 def register(request):
